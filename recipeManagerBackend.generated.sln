@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipeManagerBackend", "recipeManagerBackend.csproj", "{38D0B1B7-30AB-4C7F-A7F6-25583ECD9219}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipeManagerBackend", "recipeManagerBackend.csproj", "{4465AFB3-3F72-4F09-985B-F5E1D107E051}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{38D0B1B7-30AB-4C7F-A7F6-25583ECD9219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38D0B1B7-30AB-4C7F-A7F6-25583ECD9219}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38D0B1B7-30AB-4C7F-A7F6-25583ECD9219}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38D0B1B7-30AB-4C7F-A7F6-25583ECD9219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4465AFB3-3F72-4F09-985B-F5E1D107E051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4465AFB3-3F72-4F09-985B-F5E1D107E051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4465AFB3-3F72-4F09-985B-F5E1D107E051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4465AFB3-3F72-4F09-985B-F5E1D107E051}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
