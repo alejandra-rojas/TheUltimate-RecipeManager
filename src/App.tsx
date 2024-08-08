@@ -1,20 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import "./App.css";
 import CountButton from "./components/CountButton";
+import Recipes from "./components/Recipes";
 
 function App() {
   return (
     <>
-      <h1>Vite + React</h1>
+      <h1 className="text-xl font-bold">Your recipe collection</h1>
       <div className="card">
         <CountButton />
-        <p className="text-xl font-bold">
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <Recipes />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
