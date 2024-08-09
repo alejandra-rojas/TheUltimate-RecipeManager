@@ -32,19 +32,24 @@ function App() {
       })
       .catch((error) => {
         console.error("There was a problem while fetching the recipes:", error);
-        setLoading(false);
       });
   }, []);
 
   console.log(recipes);
 
-  if (loading) return <div>Loading...</div>;
-
   return (
     <>
       <Navbar />
-      <FilterBar />
-      <RecipesGallery />
+      {loading ? (
+        <main className="absolute inset-0 w-full h-screen flex items-center justify-center ">
+          <p className="font-robotomono text-4xl text-gray-400">Loading...</p>
+        </main>
+      ) : (
+        <>
+          <FilterBar />
+          <RecipesGallery />
+        </>
+      )}
     </>
   );
 }
