@@ -1,0 +1,12 @@
+{
+  "name": "fullstack-myrecipecollection",
+  "version": "1.0.0",
+  "description": "Fullstack application to manage my household recipes in one place. React frontend and WebAPI in the backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
