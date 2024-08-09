@@ -5,6 +5,7 @@ public class Recipe
 {
     [Key]
     public string Id { get; init; } = "recipe_" + Guid.NewGuid().ToString().Replace("-", "");
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public required string Name { get; set; }
     public required int Servings { get; set; }
     public required string Ingredients { get; set; }
