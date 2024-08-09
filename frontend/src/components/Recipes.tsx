@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 interface Recipe {
@@ -17,13 +16,6 @@ const url = "http://localhost:5273/api/Recipes";
 export default function Recipes() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-
-  //   useEffect(() => {
-  //     getRecipes();
-  //   }, []);
-  //   const getRecipes = () => {
-  //     axios.get<Recipe[]>(url).then((res) => setRecipes(res.data));
-  //   };
 
   //   useEffect(() => {
   //     fetch(url)
