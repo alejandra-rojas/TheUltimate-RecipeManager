@@ -1,16 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import "./App.css";
-import CountButton from "./components/CountButton";
-import Recipes from "./components/Recipes";
+import Navbar from "./components/navbar";
+import FilterBar from "./components/filterbar";
+import RecipesGallery from "./components/recipes-gallery";
 
 function App() {
   return (
     <>
-      <h1 className="text-xl font-bold">Your recipe collection</h1>
-      <div className="card">
-        <CountButton />
-        <Recipes />
-      </div>
+      <Navbar />
+      <FilterBar />
+      <RecipesGallery />
     </>
   );
 }
