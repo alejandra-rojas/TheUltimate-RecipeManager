@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import RecipeCard from "./recipeCard";
 
 interface Recipe {
   id: string;
@@ -58,10 +59,11 @@ export default function Recipes() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <main>
-      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        {/* Your content */}
-      </div>
+    <main className="mx-auto max-w-7xl flex flex-col flex-wrap gap-5 mt-8 px-4 py-6 sm:px-6  sm:flex-row sm:gap-6 lg:gap-6 lg:px-8">
+      <RecipeCard />
+      <RecipeCard />
+      <RecipeCard />
+      <RecipeCard />
     </main>
   );
 }
