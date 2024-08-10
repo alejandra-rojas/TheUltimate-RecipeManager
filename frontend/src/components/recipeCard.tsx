@@ -41,8 +41,8 @@ function recipeCard({
         <div className="flex flex-col flex-grow justify-between">
           <div className="flex justify-between mt-10 items-center lg:mt-6">
             <div className="flex gap-2">
-              {dietKeys.map((key) => {
-                return <p>{DietKeyTypes[key]}</p>;
+              {dietKeys.map((key, index) => {
+                return <p key={index}>{DietKeyTypes[key]}</p>;
               })}
               <button className="text-black text-xs bg-white py-2 px-2 border-[0.75px] border-black rounded-md cursor-pointer transition-colors duration-200 hover:text-white hover:bg-black">
                 Read
