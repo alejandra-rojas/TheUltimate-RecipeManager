@@ -10,7 +10,13 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Navbar({
+  modalVisibility,
+  setModalVisibility,
+}: {
+  modalVisibility: boolean;
+  setModalVisibility: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   return (
     <>
       <header className="min-h-full">
@@ -47,7 +53,10 @@ export default function Example() {
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
-                  <AddRecipeBtn />
+                  <AddRecipeBtn
+                    modalVisibility={modalVisibility}
+                    setModalVisibility={setModalVisibility}
+                  />
                 </div>
               </div>
               <div className="-mr-2 flex md:hidden">
@@ -87,7 +96,10 @@ export default function Example() {
             </div>
             <div className="border-t border-gray-700 pb-3 pt-4">
               <div className="flex items-center px-5">
-                <AddRecipeBtn />
+                <AddRecipeBtn
+                  modalVisibility={modalVisibility}
+                  setModalVisibility={setModalVisibility}
+                />
               </div>
             </div>
           </nav>

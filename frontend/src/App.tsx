@@ -27,7 +27,10 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar
+        modalVisibility={modalVisibility}
+        setModalVisibility={setModalVisibility}
+      />
       <NewRecipeModal modalVisibility={modalVisibility} />
       {loading ? (
         <main className="absolute inset-0 w-full h-screen flex items-center justify-center ">
