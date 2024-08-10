@@ -26,6 +26,7 @@ public static class DatabaseSeeder
             Ingredients = "2 Tbsp dried Wakame seaweed, 2 Japanese or 3 Persian cucumbers, 1/4 tsp salt, 3 Tbsp rice vinegar, 1 Tbsp sugar, 1/4 tsp soy sauce, 1/2 tsp sesame oil (optional), 1 tsp sesame seeds",
             Instructions = "Hydrate dried Wakame seaweed in water for 10 minutes. Drain water and squeeze water out from Wakame. Slice cucumbers as thin as you can. Stir in salt, and let sit for 5 minutes. Squeeze water out from cucumbers. In a small bowl, mix rice vinegar, sugar, soy sauce, and sesame oil together until sugar dissolves. Add vinegar mixture and sesame seeds to prepared cucumbers and Wakame and mix well.",
             RecipeType = RecipeType.Salads,
+            DietKeys = [DietaryKey.cold, DietaryKey.vegetarian]
 
         },
         new Recipe
@@ -37,6 +38,7 @@ public static class DatabaseSeeder
             Ingredients = "500g mince chicken, 1 tbsp ground black pepper, Light soy sauce to taste, A couple drops of sesame oil",
             Instructions = "In a large pan, add cooking oil. When the oil is hot: Add mince chicken and pepper. Saute until golden brown. Season with light soy sauce to taste and a couple drops of sesame oil. Transfer to a plate and keep warm.",
             RecipeType = RecipeType.SoupsAndStews,
+            DietKeys = [DietaryKey.hot, DietaryKey.spicy, DietaryKey.vegan]
         },
         new Recipe
         {
@@ -48,6 +50,7 @@ public static class DatabaseSeeder
             Instructions = "Preparar esta salsa es un proceso muy sencillo solamente necesitas freír y licuar los ingredientes básicamente.",
             Source = "https://www.vivalacocina.com/salsa-macha-salsa-de-chile-morita-y-chile-de-arbol/",
             RecipeType = RecipeType.SaucesAndDips,
+            DietKeys = [DietaryKey.spicy, DietaryKey.nuts, DietaryKey.glutenFree]
         },
 
       ]);
