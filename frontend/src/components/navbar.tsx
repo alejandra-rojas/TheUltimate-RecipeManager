@@ -1,16 +1,12 @@
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import AddRecipeBtn from "./addRecipeBtn";
 
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
-  { name: "Recent", href: "#", current: false },
+  { name: "Profile", href: "#", current: false },
 ];
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
@@ -18,7 +14,7 @@ export default function Example() {
   return (
     <>
       <header className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <nav className="bg-gray-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
@@ -51,16 +47,11 @@ export default function Example() {
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
-                  <a
-                    className="inline-block rounded-lg border border-indigo-600 bg-indigo-600 px-5 py-2 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                    href="#"
-                  >
-                    Add Recipe
-                  </a>
+                  <AddRecipeBtn />
                 </div>
               </div>
               <div className="-mr-2 flex md:hidden">
-                <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <button className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   <Bars3Icon
@@ -71,17 +62,16 @@ export default function Example() {
                     aria-hidden="true"
                     className="hidden h-6 w-6 group-data-[open]:block"
                   />
-                </DisclosureButton>
+                </button>
               </div>
             </div>
           </div>
 
-          <DisclosurePanel className="md:hidden">
+          <nav className="md:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               {navigation.map((item) => (
-                <DisclosureButton
+                <button
                   key={item.name}
-                  as="a"
                   href={item.href}
                   aria-current={item.current ? "page" : undefined}
                   className={classNames(
@@ -92,21 +82,16 @@ export default function Example() {
                   )}
                 >
                   {item.name}
-                </DisclosureButton>
+                </button>
               ))}
             </div>
             <div className="border-t border-gray-700 pb-3 pt-4">
               <div className="flex items-center px-5">
-                <a
-                  className="inline-block rounded-lg border border-indigo-600 bg-indigo-600 px-5 py-2 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                  href="#"
-                >
-                  Add Recipe
-                </a>
+                <AddRecipeBtn />
               </div>
             </div>
-          </DisclosurePanel>
-        </Disclosure>
+          </nav>
+        </nav>
       </header>
     </>
   );
