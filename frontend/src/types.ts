@@ -1,13 +1,28 @@
 export interface Recipe {
-  id: string;
+  comments: string | null;
   createdAt: string;
   creationSource: string | null;
-  name: string;
-  servings: number;
+  id: string;
+  image: string | null;
   ingredients: string;
   instructions: string;
-  source: string | null;
-  image: string | null;
-  comments: string | null;
+  recipeType: RecipeType;
+  name: string;
   rating: number;
+  servings: number;
+  source: string | null;
+}
+
+export enum RecipeType {
+  BreakfastAndBrunch,
+  Bite,
+  Cupboard,
+  Main,
+  Desserts,
+  Salads,
+  SaucesAndDips,
+  Sides,
+  Snacks,
+  SoupsAndStews,
+  Sweets,
 }

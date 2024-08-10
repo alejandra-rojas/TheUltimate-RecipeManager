@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+import { RecipeType } from "../types";
+
 interface RecipeCardProps {
   comments: string | null;
   createdAt: string;
@@ -7,10 +8,11 @@ interface RecipeCardProps {
   servings: number;
   ingredients: string;
   instructions: string;
-  image: string | undefined;
+  image: string | null;
   key: string;
   source: string | null;
   rating: number;
+  recipeType: RecipeType;
 }
 
 function recipeCard({
@@ -23,6 +25,7 @@ function recipeCard({
   image,
   source,
   rating,
+  recipeType,
 }: RecipeCardProps) {
   return (
     <article className="flex flex-col flex-1 min-w-[280px] w-full max-w-[599px] border border-gray-200 rounded-lg overflow-hidden sm:flex-[1_1_calc(50%-1rem)] lg:flex-[1_1_calc(25%-1.125rem)]">
@@ -43,7 +46,7 @@ function recipeCard({
                 Share
               </button>
             </div>
-            <p className="text-[0.8rem] text-right">400 words</p>
+            <p className="text-[0.8rem] text-right">{RecipeType[recipeType]}</p>
           </div>
         </div>
       </div>

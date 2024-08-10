@@ -19,6 +19,7 @@ export default function Recipes({ recipes }: { recipes: Recipe[] }) {
             image={recipe.image}
             source={recipe.source}
             rating={recipe.rating}
+            recipeType={recipe.recipeType}
           />
         );
       })}
