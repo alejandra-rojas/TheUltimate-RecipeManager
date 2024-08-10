@@ -5,14 +5,14 @@ import FilterBar from "./components/filterbar";
 import RecipesGallery from "./components/recipesGallery";
 import { Recipe } from "./types";
 
-const url = "http://localhost:5273/api/Recipes";
+const apiUrl = "http://localhost:5273/api/Recipes";
 
 function App() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    fetch(url)
+    fetch(apiUrl)
       .then((results) => {
         return results.json();
       })
@@ -24,8 +24,6 @@ function App() {
         console.error("There was a problem while fetching the recipes:", error);
       });
   }, []);
-
-  console.log(recipes);
 
   return (
     <>
