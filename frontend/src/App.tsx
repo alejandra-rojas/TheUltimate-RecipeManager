@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/navbar";
 import { Recipe } from "./types";
 import FilterableGallery from "./components/filterableGallery";
+import NewRecipeModal from "./components/newRecipeModal";
 
 const apiUrl = "http://localhost:5273/api/Recipes";
 
@@ -26,6 +27,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <NewRecipeModal />
       {loading ? (
         <main className="absolute inset-0 w-full h-screen flex items-center justify-center ">
           <p className="font-robotomono text-4xl text-gray-400">Loading...</p>
