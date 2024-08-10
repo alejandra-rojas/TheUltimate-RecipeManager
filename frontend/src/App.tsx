@@ -3,17 +3,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/navbar";
 import FilterBar from "./components/filterbar";
 import RecipesGallery from "./components/recipesGallery";
-
-interface Recipe {
-  id: string;
-  name: string;
-  servings: number;
-  ingredients: string;
-  instructions: string;
-  source: string;
-  image: string;
-  comments: string;
-}
+import { Recipe } from "./types";
 
 const url = "http://localhost:5273/api/Recipes";
 
