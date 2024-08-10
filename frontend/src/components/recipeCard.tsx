@@ -1,5 +1,6 @@
 import { DietKeyTypes, RecipeType } from "../types";
 import DietKeyBadge from "./dietKeyBadge";
+import RecipeTypeBadge from "./recipeTypeBadge";
 
 interface RecipeCardProps {
   comments: string | null;
@@ -47,12 +48,7 @@ function recipeCard({
                 return <DietKeyBadge key={index}>{upperChars}</DietKeyBadge>;
               })}
             </div>
-
-            <span className="font-robotomono text-[0.8rem] inline-flex items-center justify-center rounded-full bg-purple-100 px-2.5 py-0.5 text-purple-700">
-              <p className="whitespace-nowrap text-sm">
-                {RecipeType[recipeType]}
-              </p>
-            </span>
+            <RecipeTypeBadge>{RecipeType[recipeType]}</RecipeTypeBadge>
           </div>
         </div>
       </div>
