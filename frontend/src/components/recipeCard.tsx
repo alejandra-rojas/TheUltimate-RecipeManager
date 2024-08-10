@@ -52,12 +52,6 @@ function recipeCard({
                   </div>
                 );
               })}
-              <button className="text-black text-xs bg-white py-2 px-2 border-[0.75px] border-black rounded-md cursor-pointer transition-colors duration-200 hover:text-white hover:bg-black">
-                Read
-              </button>
-              <button className="text-black text-xs bg-white py-2 px-2 border-[0.75px] border-black rounded-md cursor-pointer transition-colors duration-200 hover:text-white hover:bg-black">
-                Share
-              </button>
             </div>
             <p className="text-[0.8rem] text-right">{RecipeType[recipeType]}</p>
           </div>
