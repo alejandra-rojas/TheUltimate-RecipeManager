@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace recipeManagerBackend.Models;
 
+
 public class Recipe
 {
     [Key]
@@ -15,5 +16,20 @@ public class Recipe
     public string? Image { get; set; }
     public string? Comments { get; set; }
     public int Rating { get; set; } = 0;
+    public RecipeType RecipeType { get; set; }
+}
 
+public enum RecipeType
+{
+    BreakfastAndBrunch,
+    Bites,
+    Cupboard,
+    Mains,
+    Desserts,
+    Salads,
+    SaucesAndDips,
+    Sides,
+    Snacks,
+    SoupsAndStews,
+    Sweets,
 }
