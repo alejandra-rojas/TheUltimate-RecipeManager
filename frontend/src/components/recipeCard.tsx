@@ -48,7 +48,9 @@ function recipeCard({
                 return <DietKeyBadge key={index}>{upperChars}</DietKeyBadge>;
               })}
             </div>
-            <RecipeTypeBadge>{RecipeType[recipeType]}</RecipeTypeBadge>
+            <RecipeTypeBadge recipeType={RecipeType[recipeType]}>
+              {RecipeType[recipeType]}
+            </RecipeTypeBadge>
           </div>
         </div>
       </div>
