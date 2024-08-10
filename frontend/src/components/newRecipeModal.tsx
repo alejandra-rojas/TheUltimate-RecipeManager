@@ -13,7 +13,7 @@ function NewRecipeModal({ modalVisibility }: { modalVisibility: boolean }) {
     >
       <span className="flex items-center">
         <span className="h-px flex-1 bg-gray-200"></span>
-        <h3 className="font-robotomono shrink-0 px-6 mt-0.5 text-lg font-medium text-gray-800">
+        <h3 className="font-robotomono shrink-0 px-6 mt-0.5 text-lg font-medium text-gray-600">
           Add a new recipe
         </h3>
         <span className="h-px flex-1 bg-gray-200"></span>
@@ -23,50 +23,12 @@ function NewRecipeModal({ modalVisibility }: { modalVisibility: boolean }) {
         <NewOption disabled={false} Icon={PencilSquareIcon}>
           Using the form
         </NewOption>
-
-        <div className="flex items-center gap-3 cursor-default pointer-events-none">
-          <span className="inline-block rounded-full  bg-gray-400 p-2 text-gray-200">
-            <PhotoIcon
-              aria-hidden="true"
-              className="block h-6 w-6 group-data-[open]:hidden"
-            />
-          </span>
-
-          <a
-            href="#"
-            className="group inline-flex items-center gap-1 text-lg font-medium text-gray-400"
-          >
-            From a picture
-            <span
-              aria-hidden="true"
-              className="block transition-all group-hover:ms-0.5 rtl:rotate-180"
-            >
-              &rarr;
-            </span>
-          </a>
-        </div>
-
-        <div className="flex items-center gap-3 cursor-default pointer-events-none">
-          <span className="inline-block rounded-full  bg-gray-400 p-2 text-gray-200">
-            <LinkIcon
-              aria-hidden="true"
-              className="block h-6 w-6 group-data-[open]:hidden"
-            />
-          </span>
-
-          <a
-            href="#"
-            className="group inline-flex items-center gap-1 text-lg font-medium text-gray-400"
-          >
-            From a link
-            <span
-              aria-hidden="true"
-              className="block transition-all group-hover:ms-0.5 rtl:rotate-180"
-            >
-              &rarr;
-            </span>
-          </a>
-        </div>
+        <NewOption disabled={true} Icon={PhotoIcon}>
+          From a picture
+        </NewOption>
+        <NewOption disabled={true} Icon={LinkIcon}>
+          From a link
+        </NewOption>
       </nav>
     </section>
   );
@@ -84,7 +46,11 @@ const NewOption = ({
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }) => {
   return (
-    <button className="group flex items-center gap-2">
+    <button
+      className={`group flex items-center gap-2 ${
+        disabled ? "hover: pointer-events-none cursor-pointer" : ""
+      }`}
+    >
       <span
         className={`inline-block rounded-full  bg-gray-400 p-2 text-gray-200 ${
           disabled ? "" : "group-hover:bg-indigo-600"
@@ -101,7 +67,9 @@ const NewOption = ({
         {children}
         <span
           aria-hidden="true"
-          className="block transform transition-transform duration-200 group-hover:translate-x-2 rtl:rotate-180"
+          className={`block transform transition-transform duration-200  ${
+            disabled ? "" : "group-hover:translate-x-2"
+          } `}
         >
           &rarr;
         </span>
