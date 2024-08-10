@@ -4,9 +4,13 @@ import {
   LinkIcon,
 } from "@heroicons/react/24/outline";
 
-function NewRecipeModal() {
+function NewRecipeModal({ modalVisibility }: { modalVisibility: boolean }) {
   return (
-    <section className="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6 flex flex-col gap-10">
+    <section
+      className={`rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6 flex flex-col gap-10 ${
+        modalVisibility ? "block" : "hidden"
+      }`}
+    >
       <span className="flex items-center">
         <span className="h-px flex-1 bg-gray-200"></span>
         <h3 className="font-robotomono shrink-0 px-6 mt-0.5 text-lg font-medium text-gray-800">

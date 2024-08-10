@@ -7,6 +7,7 @@ import NewRecipeModal from "./components/newRecipeModal";
 const apiUrl = "http://localhost:5273/api/Recipes";
 
 function App() {
+  const [modalVisibility, setModalVisibility] = useState<boolean>(false);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -27,7 +28,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <NewRecipeModal />
+      <NewRecipeModal modalVisibility={modalVisibility} />
       {loading ? (
         <main className="absolute inset-0 w-full h-screen flex items-center justify-center ">
           <p className="font-robotomono text-4xl text-gray-400">Loading...</p>
