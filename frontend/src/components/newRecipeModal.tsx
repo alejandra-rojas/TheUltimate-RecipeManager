@@ -54,7 +54,7 @@ const NewOption = ({
       <span
         className={`inline-block rounded-full  bg-gray-400 p-2 text-gray-200 ${
           disabled ? "" : "group-hover:bg-indigo-600"
-        }`}
+        } transition-colors duration-300 `}
       >
         <Icon aria-hidden="true" className="block h-6 w-6" />
       </span>
@@ -62,7 +62,7 @@ const NewOption = ({
       <span
         className={`inline-flex items-center gap-1 text-lg font-medium text-gray-400  ${
           disabled ? "" : "group-hover:text-indigo-600"
-        }`}
+        } transition-colors duration-300 `}
       >
         {children}
         <span
