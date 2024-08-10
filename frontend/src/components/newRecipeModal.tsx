@@ -19,7 +19,7 @@ function NewRecipeModal({ modalVisibility }: { modalVisibility: boolean }) {
         <span className="h-px flex-1 bg-gray-200"></span>
       </span>
 
-      <nav className="flex flex-col gap-6 sm:flex-row justify-around px-16">
+      <nav className="flex gap-6 justify-evenly px-16">
         <NewOption disabled={false} Icon={PencilSquareIcon}>
           Using the form
         </NewOption>
@@ -60,9 +60,9 @@ const NewOption = ({
       </span>
 
       <span
-        className={`inline-flex items-center gap-1 text-lg font-medium text-gray-400  ${
+        className={`hidden items-center gap-1 text-lg font-medium text-gray-400 sm:inline-flex  ${
           disabled ? "" : "group-hover:text-indigo-600"
-        } transition-colors duration-300 `}
+        } transition-colors duration-300`}
       >
         {children}
         <span
