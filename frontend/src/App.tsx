@@ -37,7 +37,7 @@ function App() {
       ) : (
         <>
           <FilterBar />
-          <RecipesGallery />
+          <RecipesGallery recipes={recipes} />
         </>
       )}
     </>
