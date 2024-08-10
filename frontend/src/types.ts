@@ -4,7 +4,7 @@ export interface Recipe {
   creationSource: string | null;
   dietKeys: DietKeyTypes[];
   id: string;
-  image: string | null;
+  imgURL: string;
   ingredients: string;
   instructions: string;
   recipeType: RecipeType;

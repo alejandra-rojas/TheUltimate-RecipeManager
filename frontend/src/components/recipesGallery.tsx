@@ -17,7 +17,7 @@ export default function Recipes({ recipes }: { recipes: Recipe[] }) {
             servings={recipe.servings}
             ingredients={recipe.ingredients}
             instructions={recipe.instructions}
-            image={recipe.image}
+            imgURL={recipe.imgURL}
             source={recipe.source}
             rating={recipe.rating}
             recipeType={recipe.recipeType}

@@ -9,7 +9,7 @@ interface RecipeCardProps {
   servings: number;
   ingredients: string;
   instructions: string;
-  image: string | null;
+  imgURL: string;
   key: string;
   source: string | null;
   rating: number;
@@ -23,7 +23,7 @@ function recipeCard({
   servings,
   ingredients,
   instructions,
-  image,
+  imgURL,
   source,
   rating,
   recipeType,
@@ -33,7 +33,7 @@ function recipeCard({
     <article className="flex flex-col flex-1 min-w-[280px] w-full max-w-[599px] border border-gray-200 rounded-lg overflow-hidden sm:flex-[1_1_calc(50%-1rem)] lg:flex-[1_1_calc(25%-1.125rem)]">
       <img
         className="w-full h-auto object-cover aspect-[210/155]"
-        src={image}
+        src={imgURL}
         alt="Coastal view"
       />
       <div className="p-10 pb-5 flex flex-col gap-5 flex-grow bg-white  cursor-default lg:p-7 lg:pb-6 lg:gap-4">
