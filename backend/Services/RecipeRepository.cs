@@ -9,7 +9,7 @@ public class RecipeRepository(AppDbContext context) : IRecipeRepository
     private readonly AppDbContext _context = context;
     private DbSet<Recipe> _recipes => _context.Recipes;
 
-    public Recipe Create(string name, int servings, string ingredients, string instructions, string? source, string? image, string? comments)
+    public Recipe Create(string name, int servings, string ingredients, string instructions, string? source, string image, string? comments)
     {
         var recipe = new Recipe
         {
@@ -18,7 +18,7 @@ public class RecipeRepository(AppDbContext context) : IRecipeRepository
             Ingredients = ingredients,
             Instructions = instructions,
             Source = source,
-            Image = image,
+            ImgURL = image,
             Comments = comments
         };
 
@@ -51,7 +51,7 @@ public class RecipeRepository(AppDbContext context) : IRecipeRepository
         foundRecipe.Ingredients = ingredients;
         foundRecipe.Instructions = instructions;
         foundRecipe.Source = source;
-        foundRecipe.Image = image;
+        foundRecipe.ImgURL = image;
         foundRecipe.Comments = comments;
 
         _context.SaveChanges();
