@@ -43,7 +43,7 @@ public static class DatabaseSeeder
         new Recipe
         {
             Id = "recipe_b769d25a86dc4ec6a022dfa4112354f9",
-            Name = "salsa Macha",
+            Name = "Salsa Macha",
             ImgURL = "https://keviniscooking.com/wp-content/uploads/2022/09/Salsa-Macha-square-1000x1000.jpg",
             Servings = 250,
             Ingredients = "20 gr. Chile de árbol seco, 60 gr. Chile morita, 1/3 tza. Cacahuate sin sal, 150 gr. Aceite de oliva, 2 dientes Ajo, 1 cdta. Sal de grano, 2 cdas. Semillas de ajonjolí, 1 cda. Azúcar morena, 1 1/2 cdas. Vinagre blanco",
@@ -51,6 +51,15 @@ public static class DatabaseSeeder
             Source = "https://www.vivalacocina.com/salsa-macha-salsa-de-chile-morita-y-chile-de-arbol/",
             RecipeType = RecipeType.SaucesAndDips,
             DietKeys = [DietaryKey.spicy, DietaryKey.nuts, DietaryKey.glutenFree]
+        },
+        new Recipe
+        {
+            Name = "Fourth recipe",
+            Servings = 4,
+            Ingredients = "20 gr. Chile de árbol seco, 60 gr. Chile morita, 1/3 tza. Cacahuate sin sal, 150 gr. Aceite de oliva, 2 dientes Ajo, 1 cdta. Sal de grano, 2 cdas. Semillas de ajonjolí, 1 cda. Azúcar morena, 1 1/2 cdas. Vinagre blanco",
+            Instructions = "Preparar esta salsa es un proceso muy sencillo solamente necesitas freír y licuar los ingredientes básicamente.",
+            RecipeType = RecipeType.BreakfastAndBrunch,
+            DietKeys = [DietaryKey.vegan]
         },
 
       ]);
