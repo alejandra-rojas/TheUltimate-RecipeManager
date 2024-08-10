@@ -1,4 +1,5 @@
 import { DietKeyTypes, RecipeType } from "../types";
+import DietKeyIcon from "./dietKeyIcon";
 
 interface RecipeCardProps {
   comments: string | null;
@@ -41,16 +42,9 @@ function recipeCard({
         <div className="flex flex-col flex-grow justify-between">
           <div className="flex justify-between mt-10 items-center lg:mt-6">
             <div className="flex gap-1">
-              {dietKeys.map((key, index) => {
-                const upperChars = DietKeyTypes[key].replace(/[^A-Z]/g, "");
-                return (
-                  <div
-                    className="border-gray-600 border-solid border-[0.75px] rounded-full w-6 h-5 flex items-center justify-center"
-                    key={index}
-                  >
-                    <span className="text-gray-600 text-xs">{upperChars}</span>
-                  </div>
-                );
+              {dietKeys.map((dietKey, index) => {
+                const upperChars = DietKeyTypes[dietKey].replace(/[^A-Z]/g, "");
+                return <DietKeyIcon key={index}>{upperChars}</DietKeyIcon>;
               })}
             </div>
             <p className="text-[0.8rem] text-right">{RecipeType[recipeType]}</p>
