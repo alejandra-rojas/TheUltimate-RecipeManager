@@ -19,28 +19,10 @@ function NewRecipeModal({ modalVisibility }: { modalVisibility: boolean }) {
         <span className="h-px flex-1 bg-gray-200"></span>
       </span>
 
-      <nav className="flex flex-col gap-6 sm:flex-row justify-between px-16">
-        <div className="flex items-center gap-3">
-          <span className="inline-block rounded-full  bg-gray-600 p-2 text-gray-200">
-            <PencilSquareIcon
-              aria-hidden="true"
-              className="block h-6 w-6 group-data-[open]:hidden"
-            />
-          </span>
-
-          <a
-            href="#"
-            className="group inline-flex items-center gap-1 text-lg font-medium text-gray-600"
-          >
-            Using the form
-            <span
-              aria-hidden="true"
-              className="block transition-all group-hover:ms-0.5 rtl:rotate-180"
-            >
-              &rarr;
-            </span>
-          </a>
-        </div>
+      <nav className="flex flex-col gap-6 sm:flex-row justify-around px-16">
+        <NewOption disabled={false} Icon={PencilSquareIcon}>
+          Using the form
+        </NewOption>
 
         <div className="flex items-center gap-3 cursor-default pointer-events-none">
           <span className="inline-block rounded-full  bg-gray-400 p-2 text-gray-200">
@@ -91,3 +73,39 @@ function NewRecipeModal({ modalVisibility }: { modalVisibility: boolean }) {
 }
 
 export default NewRecipeModal;
+
+const NewOption = ({
+  disabled,
+  children,
+  Icon,
+}: {
+  disabled: boolean;
+  children: React.ReactNode;
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+}) => {
+  return (
+    <button className="group flex items-center gap-2">
+      <span
+        className={`inline-block rounded-full  bg-gray-400 p-2 text-gray-200 ${
+          disabled ? "" : "group-hover:bg-indigo-600"
+        }`}
+      >
+        <Icon aria-hidden="true" className="block h-6 w-6" />
+      </span>
+
+      <span
+        className={`inline-flex items-center gap-1 text-lg font-medium text-gray-400  ${
+          disabled ? "" : "group-hover:text-indigo-600"
+        }`}
+      >
+        {children}
+        <span
+          aria-hidden="true"
+          className="block transform transition-transform duration-200 group-hover:translate-x-2 rtl:rotate-180"
+        >
+          &rarr;
+        </span>
+      </span>
+    </button>
+  );
+};
