@@ -1,5 +1,5 @@
 import { DietKeyTypes, RecipeType } from "../types";
-import DietKeyIcon from "./dietKeyIcon";
+import DietKeyBadge from "./dietKeyBadge";
 
 interface RecipeCardProps {
   comments: string | null;
@@ -44,10 +44,15 @@ function recipeCard({
             <div className="flex gap-1">
               {dietKeys.map((dietKey, index) => {
                 const upperChars = DietKeyTypes[dietKey].replace(/[^A-Z]/g, "");
-                return <DietKeyIcon key={index}>{upperChars}</DietKeyIcon>;
+                return <DietKeyBadge key={index}>{upperChars}</DietKeyBadge>;
               })}
             </div>
-            <p className="text-[0.8rem] text-right">{RecipeType[recipeType]}</p>
+
+            <span className="font-robotomono text-[0.8rem] inline-flex items-center justify-center rounded-full bg-purple-100 px-2.5 py-0.5 text-purple-700">
+              <p className="whitespace-nowrap text-sm">
+                {RecipeType[recipeType]}
+              </p>
+            </span>
           </div>
         </div>
       </div>
