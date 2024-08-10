@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import Navbar from "./components/navbar";
-import FilterBar from "./components/filterbar";
-import RecipesGallery from "./components/recipesGallery";
 import { Recipe } from "./types";
+import FilterableGallery from "./components/filterableGallery";
 
 const apiUrl = "http://localhost:5273/api/Recipes";
 
@@ -34,8 +32,7 @@ function App() {
         </main>
       ) : (
         <>
-          <FilterBar />
-          <RecipesGallery recipes={recipes} />
+          <FilterableGallery recipes={recipes} />
         </>
       )}
     </>
