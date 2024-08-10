@@ -34,15 +34,23 @@ function recipeCard({
       <img
         className="w-full h-auto object-cover aspect-[210/155]"
         src={imgURL}
-        alt="Coastal view"
+        alt={name}
       />
       <div className="p-10 pb-5 flex flex-col gap-5 flex-grow bg-white  cursor-default lg:p-7 lg:pb-6 lg:gap-4">
         <h3 className="text-xl font-bold">{name}</h3>
         <div className="flex flex-col flex-grow justify-between">
           <div className="flex justify-between mt-10 items-center lg:mt-6">
-            <div className="flex gap-2">
+            <div className="flex gap-1">
               {dietKeys.map((key, index) => {
-                return <p key={index}>{DietKeyTypes[key]}</p>;
+                const upperChars = DietKeyTypes[key].replace(/[^A-Z]/g, "");
+                return (
+                  <div
+                    className="border-gray-600 border-solid border-[0.75px] rounded-full w-6 h-5 flex items-center justify-center"
+                    key={index}
+                  >
+                    <span className="text-gray-600 text-xs">{upperChars}</span>
+                  </div>
+                );
               })}
               <button className="text-black text-xs bg-white py-2 px-2 border-[0.75px] border-black rounded-md cursor-pointer transition-colors duration-200 hover:text-white hover:bg-black">
                 Read
