@@ -11,6 +11,7 @@ export default function Recipes({ recipes }: { recipes: Recipe[] }) {
             comments={recipe.comments}
             createdAt={recipe.createdAt}
             creationSource={recipe.creationSource}
+            dietKeys={recipe.dietKeys}
             key={recipe.id}
             name={recipe.name}
             servings={recipe.servings}

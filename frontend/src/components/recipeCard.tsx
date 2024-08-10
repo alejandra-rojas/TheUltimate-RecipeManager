@@ -1,9 +1,10 @@
-import { RecipeType } from "../types";
+import { DietKeyTypes, RecipeType } from "../types";
 
 interface RecipeCardProps {
   comments: string | null;
   createdAt: string;
   creationSource: string | null;
+  dietKeys: DietKeyTypes[];
   name: string;
   servings: number;
   ingredients: string;
@@ -26,6 +27,7 @@ function recipeCard({
   source,
   rating,
   recipeType,
+  dietKeys,
 }: RecipeCardProps) {
   return (
     <article className="flex flex-col flex-1 min-w-[280px] w-full max-w-[599px] border border-gray-200 rounded-lg overflow-hidden sm:flex-[1_1_calc(50%-1rem)] lg:flex-[1_1_calc(25%-1.125rem)]">
@@ -39,6 +41,9 @@ function recipeCard({
         <div className="flex flex-col flex-grow justify-between">
           <div className="flex justify-between mt-10 items-center lg:mt-6">
             <div className="flex gap-2">
+              {dietKeys.map((key) => {
+                return <p>{DietKeyTypes[key]}</p>;
+              })}
               <button className="text-black text-xs bg-white py-2 px-2 border-[0.75px] border-black rounded-md cursor-pointer transition-colors duration-200 hover:text-white hover:bg-black">
                 Read
               </button>

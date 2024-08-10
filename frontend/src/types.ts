@@ -2,6 +2,7 @@ export interface Recipe {
   comments: string | null;
   createdAt: string;
   creationSource: string | null;
+  dietKeys: DietKeyTypes[];
   id: string;
   image: string | null;
   ingredients: string;
@@ -25,4 +26,14 @@ export enum RecipeType {
   Snacks,
   SoupsAndStews,
   Sweets,
+}
+
+export enum DietKeyTypes {
+  Cold,
+  GlutenFree,
+  Hot,
+  Nuts,
+  Spicy,
+  Vegan,
+  Vegetarian,
 }
