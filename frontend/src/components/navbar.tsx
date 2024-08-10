@@ -81,7 +81,6 @@ export default function Navbar({
               {navigation.map((item) => (
                 <button
                   key={item.name}
-                  href={item.href}
                   aria-current={item.current ? "page" : undefined}
                   className={classNames(
                     item.current
