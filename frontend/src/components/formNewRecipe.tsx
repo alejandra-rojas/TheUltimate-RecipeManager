@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { apiUrl } from "../App";
 
 type Recipe = {
   name: string;
@@ -15,8 +16,19 @@ function FormNewRecipe() {
     handleSubmit,
   } = useForm<Recipe>();
 
-  const submitForm = (formData: Recipe) => {
+  const submitForm = async (formData: Recipe) => {
     console.log(formData);
+    try {
+      await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
