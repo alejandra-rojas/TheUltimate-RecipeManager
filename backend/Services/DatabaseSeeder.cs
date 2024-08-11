@@ -38,7 +38,7 @@ public static class DatabaseSeeder
             Ingredients = "500g mince chicken, 1 tbsp ground black pepper, Light soy sauce to taste, A couple drops of sesame oil",
             Instructions = "In a large pan, add cooking oil. When the oil is hot: Add mince chicken and pepper. Saute until golden brown. Season with light soy sauce to taste and a couple drops of sesame oil. Transfer to a plate and keep warm.",
             RecipeType = RecipeType.SoupsAndStews,
-            DietKeys = [DietaryKey.hot, DietaryKey.spicy, DietaryKey.vegan]
+            DietKeys = [DietaryKey.spicy, DietaryKey.vegan]
         },
         new Recipe
         {

@@ -31,7 +31,6 @@ export enum RecipeType {
 export enum DietKeyTypes {
   Cold,
   GlutenFree,
-  Hot,
   Nuts,
   Spicy,
   Vegan,

@@ -40,7 +40,6 @@ public enum DietaryKey
 {
     cold,
     glutenFree,
-    hot,
     nuts,
     spicy,
     vegan,
