@@ -4,7 +4,6 @@ import { Recipe } from "./types";
 import FilterableGallery from "./components/filterableGallery";
 import NewRecipeModal from "./components/newRecipeModal";
 import { useQuery } from "@tanstack/react-query";
-import FormNewRecipe from "./components/formNewRecipe";
 
 export const apiUrl = "http://localhost:5273/api/Recipes";
 
@@ -28,7 +27,7 @@ function App() {
         setModalVisibility={setModalVisibility}
       />
       <NewRecipeModal modalVisibility={modalVisibility} />
-      <FormNewRecipe />
+
       {isFetching ? (
         <main className="absolute inset-0 w-full h-screen flex items-center justify-center ">
           <p className="font-robotomono text-4xl text-gray-400">Loading...</p>
