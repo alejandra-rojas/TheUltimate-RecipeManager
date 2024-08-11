@@ -15,12 +15,14 @@ GET{{recipeManagerBackend_HostAddress}}/api/recipes/1
 Accept: application/json
 
 ###
-POST{{recipeManagerBackend_HostAddress}}/recipes
+POST{{recipeManagerBackend_HostAddress}}/api/recipes
 Content-Type: application/json
 
 {
-    "name": "Hawaiian",
-    "IsGlutenFree": false
+    "name": "Napolitan Pizza",
+    "ingredients": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nMauris vehicula massa a sollicitudin cursus.\nFusce vel nulla quis mi feugiat semper non non mi.\nVestibulum nec nulla sit amet mauris egestas pellentesque sed id orci.",
+    "instructions": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+    "servings": 4
 }
 
 ###

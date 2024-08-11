@@ -9,7 +9,7 @@ public class RecipeRepository(AppDbContext context) : IRecipeRepository
     private readonly AppDbContext _context = context;
     private DbSet<Recipe> _recipes => _context.Recipes;
 
-    public Recipe Create(string name, int servings, string ingredients, string instructions, string? source, string image, string? comments)
+    public Recipe Create(string name, string ingredients, string instructions, int servings)
     {
         var recipe = new Recipe
         {
@@ -17,9 +17,6 @@ public class RecipeRepository(AppDbContext context) : IRecipeRepository
             Servings = servings,
             Ingredients = ingredients,
             Instructions = instructions,
-            Source = source,
-            ImgURL = image,
-            Comments = comments
         };
 
         _recipes.Add(recipe);

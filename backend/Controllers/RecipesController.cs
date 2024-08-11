@@ -21,6 +21,18 @@ public class RecipesController(IRecipeRepository repo) : ControllerBase
           : NotFound($"Recipe with ID: '{id}' was not found");
     }
 
+    [HttpPost]
+    public ActionResult<Recipe> CreateRecipe(AddRecipeRequest recipe)
+    {
+
+        var newRecipe = _repo.Create(recipe.Name, recipe.Ingredients, recipe.Instructions, recipe.Servings);
+
+        return CreatedAtAction(
+          nameof(GetRecipe),
+          new { id = newRecipe.Id },
+          newRecipe);
+    }
+
     [HttpDelete("{id}")]
     public IActionResult DeleteRecipe(string id)
     {
