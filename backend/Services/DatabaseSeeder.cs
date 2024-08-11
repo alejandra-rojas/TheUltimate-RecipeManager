@@ -32,13 +32,22 @@ public static class DatabaseSeeder
         new Recipe
         {
             Id = "recipe_f9ce325ded8c4fad899bfc997ed199ad",
-            Name = "dan dan noodles",
+            Name = "Dan dan noodles",
             ImgURL = "https://images.themodernproper.com/billowy-turkey/production/posts/DanDanNoodles_9.jpg?w=600&q=82&auto=format&fit=crop&dm=1707774158&s=212fb4045fd629b6f910a0dc0c7ac6c9",
             Servings = 4,
             Ingredients = "500g mince chicken, 1 tbsp ground black pepper, Light soy sauce to taste, A couple drops of sesame oil",
             Instructions = "In a large pan, add cooking oil. When the oil is hot: Add mince chicken and pepper. Saute until golden brown. Season with light soy sauce to taste and a couple drops of sesame oil. Transfer to a plate and keep warm.",
             RecipeType = RecipeType.SoupsAndStews,
             DietKeys = [DietaryKey.spicy, DietaryKey.vegan]
+        },
+         new Recipe
+        {
+            Name = "Another recipe",
+            Servings = 4,
+            Ingredients = "20 gr. Chile de árbol seco, 60 gr. Chile morita, 1/3 tza. Cacahuate sin sal, 150 gr. Aceite de oliva, 2 dientes Ajo, 1 cdta. Sal de grano, 2 cdas. Semillas de ajonjolí, 1 cda. Azúcar morena, 1 1/2 cdas. Vinagre blanco",
+            Instructions = "Preparar esta salsa es un proceso muy sencillo solamente necesitas freír y licuar los ingredientes básicamente.",
+            RecipeType = RecipeType.BreakfastAndBrunch,
+            DietKeys = [DietaryKey.vegan]
         },
         new Recipe
         {
@@ -52,15 +61,7 @@ public static class DatabaseSeeder
             RecipeType = RecipeType.SaucesAndDips,
             DietKeys = [DietaryKey.spicy, DietaryKey.nuts, DietaryKey.glutenFree]
         },
-        new Recipe
-        {
-            Name = "Fourth recipe",
-            Servings = 4,
-            Ingredients = "20 gr. Chile de árbol seco, 60 gr. Chile morita, 1/3 tza. Cacahuate sin sal, 150 gr. Aceite de oliva, 2 dientes Ajo, 1 cdta. Sal de grano, 2 cdas. Semillas de ajonjolí, 1 cda. Azúcar morena, 1 1/2 cdas. Vinagre blanco",
-            Instructions = "Preparar esta salsa es un proceso muy sencillo solamente necesitas freír y licuar los ingredientes básicamente.",
-            RecipeType = RecipeType.BreakfastAndBrunch,
-            DietKeys = [DietaryKey.vegan]
-        },
+
 
       ]);
             dbContext.SaveChanges();
