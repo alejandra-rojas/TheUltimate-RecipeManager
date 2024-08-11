@@ -5,3 +5,9 @@
 #root {
   margin: 0 auto;
 }
+
+@layer base {
+  html {
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
