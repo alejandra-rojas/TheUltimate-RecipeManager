@@ -44,10 +44,10 @@ function FormNewRecipe({
   };
 
   return (
-    <section className="flex flex-col max-w-[600px] mx-auto">
-      <h2>New recipe</h2>
+    <section className="flex flex-col max-w-[600px] mx-auto ">
+      <h2 className="hidden">New recipe</h2>
       <form onSubmit={handleSubmit(submitForm)}>
-        <FieldSet label="Basic details">
+        <FieldSet label="">
           <Field label="Name" error={errors.name?.message}>
             <input
               {...register("name", { required: "This field is required" })}

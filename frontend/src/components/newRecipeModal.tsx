@@ -29,28 +29,32 @@ function NewRecipeModal({
             <span className="h-px flex-1 bg-gray-200"></span>
           </span>
 
-          <nav className="flex gap-6 justify-evenly px-16">
-            <NewOption
-              disabled={false}
-              Icon={PencilSquareIcon}
-              onClick={() => setFormDisplay(true)}
-            >
-              Using the form
-            </NewOption>
-            <NewOption disabled={true} Icon={PhotoIcon}>
-              From a picture
-            </NewOption>
-            <NewOption disabled={true} Icon={LinkIcon}>
-              From a link
-            </NewOption>
-          </nav>
+          {!formDisplay && (
+            <nav className="flex gap-6 justify-evenly px-16">
+              <NewOption
+                disabled={false}
+                Icon={PencilSquareIcon}
+                onClick={() => setFormDisplay(true)}
+              >
+                Using the form
+              </NewOption>
+              <NewOption disabled={true} Icon={PhotoIcon}>
+                From a picture
+              </NewOption>
+              <NewOption disabled={true} Icon={LinkIcon}>
+                From a link
+              </NewOption>
+            </nav>
+          )}
         </div>
-        {formDisplay && (
-          <FormNewRecipe
-            modalVisibility={modalVisibility}
-            setModalVisibility={setModalVisibility}
-          />
-        )}
+        <div className="bg-white">
+          {formDisplay && (
+            <FormNewRecipe
+              modalVisibility={modalVisibility}
+              setModalVisibility={setModalVisibility}
+            />
+          )}
+        </div>
       </section>
     </>
   );
