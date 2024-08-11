@@ -9,7 +9,11 @@ type Recipe = {
 };
 
 function FormNewRecipe() {
-  const { register, handleSubmit } = useForm<Recipe>();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<Recipe>();
 
   const submitForm = (formData: Recipe) => {
     console.log(formData);
@@ -20,36 +24,40 @@ function FormNewRecipe() {
       <h2>New recipe</h2>
       <form onSubmit={handleSubmit(submitForm)}>
         <FieldSet label="Basic details">
-          <Field label="Name">
+          <Field label="Name" error={errors.name?.message}>
             <input
-              {...register("name")}
+              {...register("name", { required: "This field is required" })}
               type="text"
               name="name"
               id="name"
               className="p-2.5 w-full border border-[#d9d9d9] rounded-[6px]"
             />
           </Field>
-          <Field label="Ingredients">
+          <Field label="Ingredients" error={errors.ingredients?.message}>
             <textarea
-              {...register("ingredients")}
+              {...register("ingredients", {
+                required: "This field is required",
+              })}
               name="ingredients"
               id="ingredients"
               rows={3}
               className="py-1 px-[11px] w-full border border-[#d9d9d9] rounded-[6px]"
             />
           </Field>
-          <Field label="Instructions">
+          <Field label="Instructions" error={errors.instructions?.message}>
             <textarea
-              {...register("instructions")}
+              {...register("instructions", {
+                required: "This field is required",
+              })}
               name="instructions"
               id="instructions"
               rows={6}
               className="py-1 px-[11px] w-full border border-[#d9d9d9] rounded-[6px]"
             />
           </Field>
-          <Field label="Servings">
+          <Field label="Servings" error={errors.servings?.message}>
             <input
-              {...register("servings")}
+              {...register("servings", { required: "This field is required" })}
               type="number"
               name="servings"
               id="servings"
