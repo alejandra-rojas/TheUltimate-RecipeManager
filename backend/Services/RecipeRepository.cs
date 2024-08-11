@@ -42,7 +42,7 @@ public class RecipeRepository(AppDbContext context) : IRecipeRepository
 
     public Recipe? GetOne(string id) => _recipes.SingleOrDefault(c => c.Id.Equals(id));
 
-    public Recipe Update(string id, string name, int servings, string ingredients, string instructions, string? source, string? image, string? comments)
+    public Recipe Update(string id, string name, int servings, string ingredients, string instructions, string? source, string image, string? comments)
     {
         var foundRecipe = GetOne(id) ?? throw new KeyNotFoundException($"No recipe of ID {id} was found");
 
