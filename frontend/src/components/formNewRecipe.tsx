@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { apiUrl } from "../App";
+import { useQueryClient } from "@tanstack/react-query";
 
 type Recipe = {
   name: string;
@@ -16,6 +17,8 @@ function FormNewRecipe() {
     handleSubmit,
   } = useForm<Recipe>();
 
+  const queryClient = useQueryClient();
+
   const submitForm = async (formData: Recipe) => {
     console.log(formData);
     try {
@@ -26,6 +29,8 @@ function FormNewRecipe() {
         },
         body: JSON.stringify(formData),
       });
+
+      queryClient.invalidateQueries({ queryKey: ["repoRecipes"] });
     } catch (error) {
       console.error("Error:", error);
     }
