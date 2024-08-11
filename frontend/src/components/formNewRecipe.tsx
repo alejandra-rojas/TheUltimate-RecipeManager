@@ -30,7 +30,9 @@ function FormNewRecipe() {
               type="text"
               name="name"
               id="name"
-              className="p-2.5 w-full border border-[#d9d9d9] rounded-[6px]"
+              className={`p-2.5 w-full border rounded-[6px] ${
+                errors.name ? "border-red-500" : "border-[#d9d9d9]"
+              }`}
             />
           </Field>
           <Field label="Ingredients" error={errors.ingredients?.message}>
@@ -41,7 +43,9 @@ function FormNewRecipe() {
               name="ingredients"
               id="ingredients"
               rows={3}
-              className="py-1 px-[11px] w-full border border-[#d9d9d9] rounded-[6px]"
+              className={`p-2.5 w-full border rounded-[6px] ${
+                errors.name ? "border-red-500" : "border-[#d9d9d9]"
+              }`}
             />
           </Field>
           <Field label="Instructions" error={errors.instructions?.message}>
@@ -52,7 +56,9 @@ function FormNewRecipe() {
               name="instructions"
               id="instructions"
               rows={6}
-              className="py-1 px-[11px] w-full border border-[#d9d9d9] rounded-[6px]"
+              className={`p-2.5 w-full border rounded-[6px] ${
+                errors.name ? "border-red-500" : "border-[#d9d9d9]"
+              }`}
             />
           </Field>
           <Field label="Servings" error={errors.servings?.message}>
@@ -64,7 +70,9 @@ function FormNewRecipe() {
               type="number"
               name="servings"
               id="servings"
-              className="p-2.5 w-full border border-[#d9d9d9] rounded-[6px]"
+              className={`p-2.5 w-full border rounded-[6px] ${
+                errors.name ? "border-red-500" : "border-[#d9d9d9]"
+              }`}
             />
           </Field>
         </FieldSet>
@@ -109,7 +117,7 @@ export const Field = ({ label, htmlFor, error, children }: FieldProps) => {
       {label && <label htmlFor={id}>{label}</label>}
       {children}
       {error && (
-        <div role={"alert"} className="error">
+        <div role={"alert"} className="text-red-600 text-sm">
           {error}
         </div>
       )}
