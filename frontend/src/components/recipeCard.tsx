@@ -20,18 +20,18 @@ interface RecipeCardProps {
 
 function recipeCard({ name, imgURL, recipeType, dietKeys }: RecipeCardProps) {
   return (
-    <article className="group bg-beige-100 flex min-w-[280px] w-full max-w-[599px] border border-gray-800  overflow-hidden sm:flex-[1_1_calc(50%-1rem)] lg:flex-[1_1_calc(33%-1.125rem)] hover:bg-gray-50 hover:cursor-pointer">
+    <article className="group bg-beige-100 flex min-w-[280px] w-full bg-gray-50 sm:bg-gray-100 lg:max-w-[389px] border border-gray-800  overflow-hidden sm:flex-[1_1_calc(50%-1rem)] lg:flex-[1_1_calc(33%-1.125rem)] hover:bg-gray-50 hover:cursor-pointer">
       <img
         className="p-1.5 h-auto object-cover w-28 hover:filter-none transition duration-300 ease-in-out"
         src={imgURL}
         alt={name}
       />
 
-      <div className="pt-6 px-2 flex flex-col flex-grow cursor-default pointer-events-none  ">
+      <div className="pt-6 px-2 flex flex-col flex-grow cursor-default pointer-events-none ">
         <RecipeTypeBadge recipeType={RecipeType[recipeType]}>
           {RecipeType[recipeType]}
         </RecipeTypeBadge>
-        <h3 className="text-xl pt-3 pl-2 font-[500] text-[#2a0000] leading-none">
+        <h3 className="text-xl pt-3 pl-1.5 font-[500] text-[#2a0000] leading-none">
           {name}
         </h3>
 
