@@ -57,7 +57,10 @@ function FormNewRecipe() {
           </Field>
           <Field label="Servings" error={errors.servings?.message}>
             <input
-              {...register("servings", { required: "This field is required" })}
+              {...register("servings", {
+                required: "This field is required",
+                valueAsNumber: true,
+              })}
               type="number"
               name="servings"
               id="servings"
