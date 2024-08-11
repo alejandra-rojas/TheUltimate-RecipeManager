@@ -8,11 +8,13 @@ export default function addRecipeBtn({
   return (
     <button
       onClick={() => setModalVisibility(!modalVisibility)}
-      className={`inline-block rounded-lg border border-indigo-600 px-5 py-2 text-sm font-medium  hover:bg-transparent hover:text-white hover:bg-indigo-600 ${
-        modalVisibility ? "text-white bg-indigo-600" : "text-indigo-600"
-      } transition-colors duration-300`}
+      className={`inline-block border border-indigo-600 rounded-full px-5 py-2 text-sm font-medium  ${
+        modalVisibility
+          ? " text-white bg-indigo-600 "
+          : " text-indigo-600 hover:text-white hover:bg-indigo-600"
+      } transition-all duration-300`}
     >
-      Add Recipe
+      {modalVisibility ? "X" : "Add recipe"}
     </button>
   );
 }
