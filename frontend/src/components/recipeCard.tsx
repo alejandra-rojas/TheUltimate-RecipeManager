@@ -20,26 +20,26 @@ interface RecipeCardProps {
 
 function recipeCard({ name, imgURL, recipeType, dietKeys }: RecipeCardProps) {
   return (
-    <article className="flex flex-col flex-1 min-w-[280px] w-full max-w-[599px] border border-gray-200 rounded-lg overflow-hidden sm:flex-[1_1_calc(50%-1rem)] lg:flex-[1_1_calc(25%-1.125rem)]">
+    <article className="group bg-beige-100 flex min-w-[280px] w-full max-w-[599px] border border-gray-800  overflow-hidden sm:flex-[1_1_calc(50%-1rem)] lg:flex-[1_1_calc(33%-1.125rem)] hover:bg-gray-50 hover:cursor-pointer">
       <img
-        className="w-full h-auto object-cover aspect-[210/155]"
+        className="p-1.5 h-auto object-cover w-28 hover:filter-none transition duration-300 ease-in-out"
         src={imgURL}
         alt={name}
       />
-      <div className="p-10 pb-5 flex flex-col gap-5 flex-grow bg-white  cursor-default lg:p-7 lg:pb-6 lg:gap-4">
-        <h3 className="text-xl font-bold">{name}</h3>
-        <div className="flex flex-col flex-grow justify-between">
-          <div className="flex justify-between mt-10 items-center lg:mt-6">
-            <div className="flex gap-1">
-              {dietKeys.map((dietKey, index) => {
-                const upperChars = DietKeyTypes[dietKey].replace(/[^A-Z]/g, "");
-                return <DietKeyBadge key={index}>{upperChars}</DietKeyBadge>;
-              })}
-            </div>
-            <RecipeTypeBadge recipeType={RecipeType[recipeType]}>
-              {RecipeType[recipeType]}
-            </RecipeTypeBadge>
-          </div>
+
+      <div className="pt-6 px-2 flex flex-col flex-grow cursor-default pointer-events-none  ">
+        <RecipeTypeBadge recipeType={RecipeType[recipeType]}>
+          {RecipeType[recipeType]}
+        </RecipeTypeBadge>
+        <h3 className="text-xl pt-3 pl-2 font-[500] text-[#2a0000] leading-none">
+          {name}
+        </h3>
+
+        <div className="flex flex-grow items-end gap-1 pl-1.5 pt-6 pb-4 ">
+          {dietKeys.map((dietKey, index) => {
+            const upperChars = DietKeyTypes[dietKey].replace(/[^A-Z]/g, "");
+            return <DietKeyBadge key={index}>{upperChars}</DietKeyBadge>;
+          })}
         </div>
       </div>
     </article>
