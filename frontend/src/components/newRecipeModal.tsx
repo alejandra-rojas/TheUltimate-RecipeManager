@@ -6,41 +6,52 @@ import {
 import FormNewRecipe from "./formNewRecipe";
 import { useState } from "react";
 
-function NewRecipeModal({ modalVisibility }: { modalVisibility: boolean }) {
+function NewRecipeModal({
+  modalVisibility,
+  setModalVisibility,
+}: {
+  modalVisibility: boolean;
+  setModalVisibility: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const [formDisplay, setFormDisplay] = useState<boolean>(false);
 
   return (
     <>
-      <section
-        className={`rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6 flex flex-col gap-10 ${
-          modalVisibility ? "block" : "hidden"
-        }`}
-      >
-        <span className="flex items-center">
-          <span className="h-px flex-1 bg-gray-200"></span>
-          <h3 className="font-robotomono shrink-0 px-6 mt-0.5 text-lg font-medium text-gray-600">
-            Add a new recipe
-          </h3>
-          <span className="h-px flex-1 bg-gray-200"></span>
-        </span>
+      <section className={`${modalVisibility ? "block" : "hidden"}`}>
+        <div
+          className={`rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6 flex flex-col gap-10`}
+        >
+          <span className="flex items-center">
+            <span className="h-px flex-1 bg-gray-200"></span>
+            <h3 className="font-robotomono shrink-0 px-6 mt-0.5 text-lg font-medium text-gray-600">
+              Add a new recipe
+            </h3>
+            <span className="h-px flex-1 bg-gray-200"></span>
+          </span>
 
-        <nav className="flex gap-6 justify-evenly px-16">
-          <NewOption
-            disabled={false}
-            Icon={PencilSquareIcon}
-            onClick={() => setFormDisplay(true)}
-          >
-            Using the form
-          </NewOption>
-          <NewOption disabled={true} Icon={PhotoIcon}>
-            From a picture
-          </NewOption>
-          <NewOption disabled={true} Icon={LinkIcon}>
-            From a link
-          </NewOption>
-        </nav>
+          <nav className="flex gap-6 justify-evenly px-16">
+            <NewOption
+              disabled={false}
+              Icon={PencilSquareIcon}
+              onClick={() => setFormDisplay(true)}
+            >
+              Using the form
+            </NewOption>
+            <NewOption disabled={true} Icon={PhotoIcon}>
+              From a picture
+            </NewOption>
+            <NewOption disabled={true} Icon={LinkIcon}>
+              From a link
+            </NewOption>
+          </nav>
+        </div>
+        {formDisplay && (
+          <FormNewRecipe
+            modalVisibility={modalVisibility}
+            setModalVisibility={setModalVisibility}
+          />
+        )}
       </section>
-      {formDisplay && <FormNewRecipe />}
     </>
   );
 }

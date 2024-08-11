@@ -26,7 +26,10 @@ function App() {
         modalVisibility={modalVisibility}
         setModalVisibility={setModalVisibility}
       />
-      <NewRecipeModal modalVisibility={modalVisibility} />
+      <NewRecipeModal
+        modalVisibility={modalVisibility}
+        setModalVisibility={setModalVisibility}
+      />
 
       {isFetching ? (
         <main className="absolute inset-0 w-full h-screen flex items-center justify-center ">

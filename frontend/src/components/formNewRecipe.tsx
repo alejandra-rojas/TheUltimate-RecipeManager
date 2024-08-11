@@ -10,7 +10,13 @@ type Recipe = {
   servings: number;
 };
 
-function FormNewRecipe() {
+function FormNewRecipe({
+  modalVisibility,
+  setModalVisibility,
+}: {
+  modalVisibility: boolean;
+  setModalVisibility: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const {
     register,
     formState: { errors },
@@ -31,6 +37,7 @@ function FormNewRecipe() {
       });
 
       queryClient.invalidateQueries({ queryKey: ["repoRecipes"] });
+      setModalVisibility(!modalVisibility);
     } catch (error) {
       console.error("Error:", error);
     }
