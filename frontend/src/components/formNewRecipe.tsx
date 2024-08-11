@@ -1,21 +1,28 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+
+type Recipe = {
+  name: string;
+  ingredients: string;
+  instructions: string;
+  servings: number;
+};
 
 function FormNewRecipe() {
-  // public string? CreationSource { get; set; }
-  // public string? Source { get; set; }
-  // public string ImgURL { get; set; } = "https://placehold.co/600x400/f1f1f1/ffffff?text=img";
-  // public string? Comments { get; set; }
-  // public int Rating { get; set; } = 0;
-  // public RecipeType RecipeType { get; set; }
-  // public List<DietaryKey> DietKeys { get; set; } = new();
+  const { register, handleSubmit } = useForm<Recipe>();
+
+  const submitForm = (formData: Recipe) => {
+    console.log(formData);
+  };
 
   return (
     <section className="flex flex-col max-w-[600px] mx-auto">
       <h2>New recipe</h2>
-      <form>
+      <form onSubmit={handleSubmit(submitForm)}>
         <FieldSet label="Basic details">
           <Field label="Name">
             <input
+              {...register("name")}
               type="text"
               name="name"
               id="name"
@@ -24,6 +31,7 @@ function FormNewRecipe() {
           </Field>
           <Field label="Ingredients">
             <textarea
+              {...register("ingredients")}
               name="ingredients"
               id="ingredients"
               rows={3}
@@ -32,6 +40,7 @@ function FormNewRecipe() {
           </Field>
           <Field label="Instructions">
             <textarea
+              {...register("instructions")}
               name="instructions"
               id="instructions"
               rows={6}
@@ -40,9 +49,10 @@ function FormNewRecipe() {
           </Field>
           <Field label="Servings">
             <input
+              {...register("servings")}
               type="number"
-              name="amount"
-              id="amount"
+              name="servings"
+              id="servings"
               className="p-2.5 w-full border border-[#d9d9d9] rounded-[6px]"
             />
           </Field>
