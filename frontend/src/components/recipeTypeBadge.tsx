@@ -5,27 +5,27 @@ interface RecipeTypeBadgeProps {
 
 function recipeTypeBadge({ recipeType, children }: RecipeTypeBadgeProps) {
   const typeColorDefinition: { [key: string]: string } = {
-    BreakfastAndBrunch: "bg-yellow-100 text-yellow-700",
-    Bite: "bg-green-100 text-green-700",
-    Cupboard: "bg-pink-100 text-pink-700",
-    Main: "bg-red-100 text-red-700",
-    Desserts: "bg-yellow-100 text-yellow-700",
-    Salads: "bg-green-100 text-green-700",
-    SaucesAndDips: "bg-red-100 text-red-700",
-    Sides: "bg-red-100 text-red-700",
-    Snacks: "bg-green-100 text-green-700",
-    SoupsAndStews: "bg-pink-100 text-pink-700",
-    Sweets: "bg-purple-100 text-purple-700",
+    BreakfastAndBrunch: "bg-yellow-100 text-yellow-500",
+    Bite: "bg-green-100 text-green-500",
+    Cupboard: "bg-pink-100 text-pink-500",
+    Main: "bg-red-100 text-red-500",
+    Desserts: "bg-yellow-100 text-yellow-500",
+    Salads: "bg-green-100 text-green-500",
+    SaucesAndDips: "bg-red-100 text-red-500",
+    Sides: "bg-red-100 text-red-500",
+    Snacks: "bg-green-100 text-green-500",
+    SoupsAndStews: "bg-pink-100 text-pink-500",
+    Sweets: "bg-purple-100 text-purple-500",
   };
 
   const colorClasses =
-    typeColorDefinition[recipeType] || "bg-gray-100 text-gray-700";
+    typeColorDefinition[recipeType] || "bg-gray-100 text-gray-500";
 
   return (
     <span
-      className={`font-robotomono text-[0.8rem] inline-flex items-center justify-center rounded-full  px-2.5 py-0.5 ${colorClasses}`}
+      className={`w-fit font-robotomono inline-flex items-center justify-center rounded-full  px-3 py-0.5 ${colorClasses}`}
     >
-      <p className="whitespace-nowrap text-sm">{children}</p>
+      <p className="whitespace-nowrap text-[0.75rem]">{children}</p>
     </span>
   );
 }
