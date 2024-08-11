@@ -18,19 +18,7 @@ interface RecipeCardProps {
   recipeType: RecipeType;
 }
 
-function recipeCard({
-  comments,
-  createdAt,
-  name,
-  servings,
-  ingredients,
-  instructions,
-  imgURL,
-  source,
-  rating,
-  recipeType,
-  dietKeys,
-}: RecipeCardProps) {
+function recipeCard({ name, imgURL, recipeType, dietKeys }: RecipeCardProps) {
   return (
     <article className="flex flex-col flex-1 min-w-[280px] w-full max-w-[599px] border border-gray-200 rounded-lg overflow-hidden sm:flex-[1_1_calc(50%-1rem)] lg:flex-[1_1_calc(25%-1.125rem)]">
       <img
