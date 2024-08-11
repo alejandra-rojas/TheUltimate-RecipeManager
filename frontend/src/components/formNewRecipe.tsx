@@ -1,6 +1,14 @@
 import React from "react";
 
 function FormNewRecipe() {
+  // public string? CreationSource { get; set; }
+  // public string? Source { get; set; }
+  // public string ImgURL { get; set; } = "https://placehold.co/600x400/f1f1f1/ffffff?text=img";
+  // public string? Comments { get; set; }
+  // public int Rating { get; set; } = 0;
+  // public RecipeType RecipeType { get; set; }
+  // public List<DietaryKey> DietKeys { get; set; } = new();
+
   return (
     <section className="flex flex-col max-w-[600px] mx-auto">
       <h2>New recipe</h2>
@@ -14,11 +22,19 @@ function FormNewRecipe() {
               className="p-2.5 w-full border border-[#d9d9d9] rounded-[6px]"
             />
           </Field>
-          <Field label="Description">
+          <Field label="Ingredients">
             <textarea
-              name="description"
-              id="description"
-              rows={10}
+              name="ingredients"
+              id="ingredients"
+              rows={3}
+              className="py-1 px-[11px] w-full border border-[#d9d9d9] rounded-[6px]"
+            />
+          </Field>
+          <Field label="Instructions">
+            <textarea
+              name="instructions"
+              id="instructions"
+              rows={6}
               className="py-1 px-[11px] w-full border border-[#d9d9d9] rounded-[6px]"
             />
           </Field>
