@@ -13,14 +13,19 @@ type Recipe = {
 function FormNewRecipe({
   modalVisibility,
   setModalVisibility,
+  formDisplay,
+  setFormDisplay,
 }: {
   modalVisibility: boolean;
   setModalVisibility: React.Dispatch<React.SetStateAction<boolean>>;
+  formDisplay: boolean;
+  setFormDisplay: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm<Recipe>();
 
   const queryClient = useQueryClient();
@@ -37,72 +42,78 @@ function FormNewRecipe({
       });
 
       queryClient.invalidateQueries({ queryKey: ["repoRecipes"] });
+      reset();
       setModalVisibility(!modalVisibility);
+      setFormDisplay(!formDisplay);
     } catch (error) {
       console.error("Error:", error);
     }
   };
 
   return (
-    <section className="flex flex-col max-w-[600px] mx-auto ">
+    <section className="flex flex-col px-5 pb-5 sm:px-20 ">
       <h2 className="hidden">New recipe</h2>
       <form onSubmit={handleSubmit(submitForm)}>
-        <FieldSet label="">
-          <Field label="Name" error={errors.name?.message}>
-            <input
-              {...register("name", { required: "This field is required" })}
-              type="text"
-              name="name"
-              id="name"
-              className={`p-2.5 w-full border rounded-[6px] ${
-                errors.name ? "border-red-500" : "border-[#d9d9d9]"
-              }`}
-            />
-          </Field>
-          <Field label="Ingredients" error={errors.ingredients?.message}>
-            <textarea
-              {...register("ingredients", {
-                required: "This field is required",
-              })}
-              name="ingredients"
-              id="ingredients"
-              rows={3}
-              className={`p-2.5 w-full border rounded-[6px] ${
-                errors.name ? "border-red-500" : "border-[#d9d9d9]"
-              }`}
-            />
-          </Field>
-          <Field label="Instructions" error={errors.instructions?.message}>
-            <textarea
-              {...register("instructions", {
-                required: "This field is required",
-              })}
-              name="instructions"
-              id="instructions"
-              rows={6}
-              className={`p-2.5 w-full border rounded-[6px] ${
-                errors.name ? "border-red-500" : "border-[#d9d9d9]"
-              }`}
-            />
-          </Field>
-          <Field label="Servings" error={errors.servings?.message}>
-            <input
-              {...register("servings", {
-                required: "This field is required",
-                valueAsNumber: true,
-              })}
-              type="number"
-              name="servings"
-              id="servings"
-              className={`p-2.5 w-full border rounded-[6px] ${
-                errors.name ? "border-red-500" : "border-[#d9d9d9]"
-              }`}
-            />
-          </Field>
+        <FieldSet label="New recipe form">
+          <div>
+            <Field label="Name" error={errors.name?.message}>
+              <input
+                {...register("name", { required: "This field is required" })}
+                type="text"
+                name="name"
+                id="name"
+                className={`p-2.5 w-full border rounded-[6px] ${
+                  errors.name ? "border-red-500" : "border-[#d9d9d9]"
+                }`}
+              />
+            </Field>
+            <Field label="Servings" error={errors.servings?.message}>
+              <input
+                {...register("servings", {
+                  required: "This field is required",
+                  valueAsNumber: true,
+                })}
+                type="number"
+                name="servings"
+                id="servings"
+                className={`p-2.5 w-full border rounded-[6px] ${
+                  errors.name ? "border-red-500" : "border-[#d9d9d9]"
+                }`}
+              />
+            </Field>
+            <Field label="Ingredients" error={errors.ingredients?.message}>
+              <textarea
+                {...register("ingredients", {
+                  required: "This field is required",
+                })}
+                name="ingredients"
+                id="ingredients"
+                rows={2}
+                className={`p-2.5 w-full border rounded-[6px] ${
+                  errors.name ? "border-red-500" : "border-[#d9d9d9]"
+                }`}
+              />
+            </Field>
+          </div>
+          <div className="grow">
+            <Field label="Instructions" error={errors.instructions?.message}>
+              <textarea
+                {...register("instructions", {
+                  required: "This field is required",
+                })}
+                name="instructions"
+                id="instructions"
+                rows={8}
+                className={`p-2.5 w-full border rounded-[6px] ${
+                  errors.name ? "border-red-500" : "border-[#d9d9d9]"
+                }`}
+              />
+            </Field>
+          </div>
         </FieldSet>
 
         <Field>
-          <button className="text-sm cursor-pointer py-[0.6em] px-[1.2em] border border-[#d9d9d9] rounded-[6px] mr-auto bg-blue-500 text-white">
+          <button className="text-sm text-indigo-100 hover:text-white cursor-pointer py-[0.6em] px-[1.2em]  rounded-xl mr-auto bg-indigo-500 hover:bg-indigo-600">
             Add to your recipe book
           </button>
         </Field>
@@ -119,9 +130,11 @@ interface FieldSetProps {
 }
 export const FieldSet = ({ label, children }: FieldSetProps) => {
   return (
-    <fieldset className="my-4 border-none">
-      {label && <legend className="text-base font-bold mb-2.5">{label}</legend>}
-      <div className="flex flex-col justify-between self-start">{children}</div>
+    <fieldset className="mt-4 mb-2">
+      {label && <legend className="hidden">{label}</legend>}
+      <div className="flex flex-col justify-between self-start sm:flex-row sm:gap-5">
+        {children}
+      </div>
     </fieldset>
   );
 };
@@ -138,7 +151,11 @@ export const Field = ({ label, htmlFor, error, children }: FieldProps) => {
 
   return (
     <div className="form-field">
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && (
+        <label htmlFor={id} className="font-robotomono text-xs text-gray-800">
+          {label}
+        </label>
+      )}
       {children}
       {error && (
         <div role={"alert"} className="text-red-600 text-sm">
