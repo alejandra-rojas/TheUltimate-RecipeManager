@@ -23,7 +23,7 @@ function NewRecipeModal({
         >
           <span className="flex items-center">
             <span className="h-px flex-1 bg-gray-200"></span>
-            <h3 className="font-robotomono shrink-0 px-6 mt-0.5 text-lg font-medium text-gray-600">
+            <h3 className="shrink-0 px-6 mt-0.5 text-lg font-medium text-gray-600">
               Add a new recipe
             </h3>
             <span className="h-px flex-1 bg-gray-200"></span>
@@ -52,6 +52,8 @@ function NewRecipeModal({
             <FormNewRecipe
               modalVisibility={modalVisibility}
               setModalVisibility={setModalVisibility}
+              formDisplay={formDisplay}
+              setFormDisplay={setFormDisplay}
             />
           )}
         </div>
