@@ -20,7 +20,7 @@ interface RecipeCardProps {
 
 function recipeCard({ name, imgURL, recipeType, dietKeys }: RecipeCardProps) {
   return (
-    <article className="group bg-beige-100 flex min-w-[280px] w-full bg-gray-50 sm:bg-gray-100 lg:max-w-[389px] border border-gray-800  overflow-hidden sm:flex-[1_1_calc(50%-1rem)] lg:flex-[1_1_calc(33%-1.125rem)] hover:bg-gray-50 hover:cursor-pointer">
+    <article className="group flex min-w-[280px] w-full bg-gray-50  lg:max-w-[389px] border border-gray-200 hover:border-gray-400 overflow-hidden sm:flex-[1_1_calc(50%-1rem)] lg:flex-[1_1_calc(33%-1.125rem)] hover:bg-gray-50 hover:cursor-pointer shadow">
       <img
         className="p-1.5 h-auto object-cover w-28 hover:filter-none transition duration-300 ease-in-out"
         src={imgURL}
