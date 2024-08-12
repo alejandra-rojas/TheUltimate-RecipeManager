@@ -40,15 +40,6 @@ public static class DatabaseSeeder
             RecipeType = RecipeType.SoupsAndStews,
             DietKeys = [DietaryKey.spicy, DietaryKey.vegan]
         },
-         new Recipe
-        {
-            Name = "Another recipe",
-            Servings = 4,
-            Ingredients = "20 gr. Chile de árbol seco, 60 gr. Chile morita, 1/3 tza. Cacahuate sin sal, 150 gr. Aceite de oliva, 2 dientes Ajo, 1 cdta. Sal de grano, 2 cdas. Semillas de ajonjolí, 1 cda. Azúcar morena, 1 1/2 cdas. Vinagre blanco",
-            Instructions = "Preparar esta salsa es un proceso muy sencillo solamente necesitas freír y licuar los ingredientes básicamente.",
-            RecipeType = RecipeType.BreakfastAndBrunch,
-            DietKeys = [DietaryKey.vegan]
-        },
         new Recipe
         {
             Id = "recipe_b769d25a86dc4ec6a022dfa4112354f9",
@@ -61,8 +52,16 @@ public static class DatabaseSeeder
             RecipeType = RecipeType.SaucesAndDips,
             DietKeys = [DietaryKey.spicy, DietaryKey.nuts, DietaryKey.glutenFree]
         },
-
-
+        new Recipe
+        {
+            Name = "Mabo Don",
+            Servings = 4,
+            ImgURL = "https://assets.epicurious.com/photos/63209959586679e44171fd5b/1:1/w_2560%2Cc_limit/Mabo%2520Don%25E2%2580%2594RECIPE.jpg",
+            Ingredients = "20 gr. Chile de árbol seco, 60 gr. Chile morita, 1/3 tza. Cacahuate sin sal, 150 gr. Aceite de oliva, 2 dientes Ajo, 1 cdta. Sal de grano, 2 cdas. Semillas de ajonjolí, 1 cda. Azúcar morena, 1 1/2 cdas. Vinagre blanco",
+            Instructions = "Preparar esta salsa es un proceso muy sencillo solamente necesitas freír y licuar los ingredientes básicamente.",
+            RecipeType = RecipeType.Mains,
+            DietKeys = [DietaryKey.vegan]
+        },
       ]);
             dbContext.SaveChanges();
         }
