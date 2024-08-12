@@ -12,7 +12,7 @@ public class Recipe
     public required string Ingredients { get; set; }
     public required string Instructions { get; set; }
     public string? Source { get; set; }
-    public string ImgURL { get; set; } = "https://placehold.co/600x400/f1f1f1/ffffff?text=img";
+    public string ImgURL { get; set; } = "https://placehold.co/300x200/d1d1d1/dedede?text=img";
     public string? Comments { get; set; }
     public int Rating { get; set; } = 0;
     public RecipeType RecipeType { get; set; }
