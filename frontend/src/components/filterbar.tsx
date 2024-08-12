@@ -8,7 +8,13 @@ function filterbar({
   return (
     <section className="bg-white shadow">
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex justify-between">
-        <p className="text-gray-400">other filters will go here</p>
+        <div className="flex gap-2">
+          <DietKeyFilter>S</DietKeyFilter>
+          <DietKeyFilter>C</DietKeyFilter>
+          <DietKeyFilter>N</DietKeyFilter>
+          <DietKeyFilter>V</DietKeyFilter>
+          <DietKeyFilter>GF</DietKeyFilter>
+        </div>
         <div className="relative">
           <label htmlFor="Search" className="sr-only">
             Search
@@ -18,7 +24,7 @@ function filterbar({
             type="text"
             id="Search"
             value={filterText}
-            placeholder="Search for..."
+            placeholder="Search by name..."
             onChange={(e) => onFilterTextChange(e.target.value)}
             className="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm"
           />
@@ -50,3 +56,13 @@ function filterbar({
 }
 
 export default filterbar;
+
+export function DietKeyFilter(props: { children: React.ReactNode }) {
+  return (
+    <>
+      <span className="flex items-center justify-center text-[0.55rem] w-6.5 h-5 px-2 py-1 text-gray-600 bg-gray-100 rounded-full hover:text-gray-300 hover:bg-gray-100 hover:bg-transparent border-solid border-[0.5px] whitespace-nowrap cursor-pointer">
+        {props.children}
+      </span>
+    </>
+  );
+}
