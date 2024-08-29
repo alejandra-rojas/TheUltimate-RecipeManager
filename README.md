@@ -28,7 +28,7 @@ The recipe collection manager supports:
 
 ## Frontend
 
-This is a React application styled with Tailwind CSS. It utilizes Tanstack Query for data fetching and Tanstack Router for routing.
+This is a React application written in TypeScript, styled with Tailwind CSS. It utilizes Tanstack Query for data fetching and Tanstack Router for routing.
 
 ## Backend
 
