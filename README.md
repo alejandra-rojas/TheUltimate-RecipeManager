@@ -25,3 +25,11 @@ The recipe collection manager supports:
 - **Optimized Print Formatting** to fit recipes on a single page.
 - **Share Your Collection** with read-only access for others
 - **Email Sharing** to send recipes directly.
+
+## Frontend
+
+This is a React application styled with Tailwind CSS. It utilizes Tanstack Query for data fetching and Tanstack Router for routing.
+
+## Backend
+
+The backend is built with a .NET Web API and connected to a SQL database.
